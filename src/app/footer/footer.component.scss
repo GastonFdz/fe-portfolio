@@ -1,5 +1,6 @@
 .footer-links {
-    width: fit-content;
+    width: 100px;
+    white-space: nowrap;
 }
 
 .footer-links ul{
@@ -10,7 +11,7 @@
     color: white;
     text-decoration: none;
     border: #fff 1px solid;
-    border-radius: 8%;
+    border-radius: 50%;
     padding: 10px;
     cursor: pointer;
 }
@@ -18,7 +19,13 @@
 .footer-links ul li a:hover{
     color: darckgrey;
     background-color: blue;
+    box-shadow: 2px 2px #18d6cd;
 }
+
+.footer-links ul li a:active {
+    box-shadow: none;
+    transform: translateY(5px); 
+  }
 
 .main {
     width: fit-content;
