@@ -1,10 +1,12 @@
-import { Component, Inject, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import * as configData from '../../../assets/configData.json';
+
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [],
+  imports: [
+  ],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })
@@ -16,9 +18,9 @@ export class FooterComponent implements AfterViewInit {
   @ViewChild('github', { static: true }) githubButton!: ElementRef<HTMLButtonElement>;
   @ViewChild('whatsapp', { static: true }) whatsappButton!: ElementRef<HTMLButtonElement>;
 
-  phoneNumber = "+542235468926"; // Tu número de teléfono sin espacios ni caracteres especiales
+  phoneNumber = configData.myData.contact.phone; // Tu número de teléfono sin espacios ni caracteres especiales
 
-  constructor(@Inject(DOCUMENT) private document: Document) { }
+  constructor() { }
 
   ngAfterViewInit() {
     this.telegramButton.nativeElement.addEventListener('click', this.openConversationTelegram.bind(this));
@@ -29,31 +31,30 @@ export class FooterComponent implements AfterViewInit {
   }
 
   openConversationTelegram() {
-    let userNameTelegram = "Gastonmf"; // Opcional, si tienes un nombre de usuario 
-    let urlTelegram = `https://telegram.me/${userNameTelegram}?start=${this.phoneNumber}`;
+    let userNameTelegram = configData.myData.contact.telegram; // Opcional, si tienes un nombre de usuario 
+    let urlTelegram = configData.config.urlTelegram + userNameTelegram + `?start=${this.phoneNumber}`;
     window.open(urlTelegram, "_blank")
   }
 
   openConversationSkype() {
-    let userNameSkype = "live:gastonmfernandez";
-    let urlSkype: string = `skype:${userNameSkype}?chat`;
-    window.open(urlSkype, "_blank")
+    window.open(configData.myData.contact.skype, "_blank")
   }
 
   openConversationGithub() {
-    let userNameGithub = "GastonFdz";
-    let urlGithub: string = `https://github.com/${userNameGithub}`;
+
+    let urlGithub: string = configData.config.urlGithub + configData.myData.contact.github;
     window.open(urlGithub, "_blank")
   }
 
   openConversationWhtsapp() {
-    let urlWhtsapp: string = `https://wa.me/${this.phoneNumber}?text=Hola!%20Tengo%20una%20propuesta%20que%20puede%20ser%20de%20tu%20interés.`;
+    let urlWhtsapp: string = configData.config.urlWhatsapp + this.phoneNumber + configData.config.textoWhatsappMsg;
     window.open(urlWhtsapp, "_blank")
   }
 
   openConversationLinkedin() {
-    let userNameLinkedin = "gastonfdz";
-    let urlLinkedin: string = `https://www.linkedin.com/messaging/thread/new/?recipient=${userNameLinkedin}`;
+    let userNameLinkedin = configData.myData.contact.linkedin;
+
+    let urlLinkedin: string = configData.config.urlLinkedin + userNameLinkedin;
     window.open(urlLinkedin, "_blank")
   }
 

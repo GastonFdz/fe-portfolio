@@ -65,6 +65,7 @@ testem.log
 /typings
 .editorconfig
 HELP.md
+.hintrc
 *.log
 *.old
 *.tmp
