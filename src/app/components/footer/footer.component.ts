@@ -1,5 +1,5 @@
 import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
-import * as configData from '../../../assets/configData.json';
+import { Utils } from '../../shared/utils/utils.ts';
 
 
 @Component({
@@ -18,7 +18,6 @@ export class FooterComponent implements AfterViewInit {
   @ViewChild('github', { static: true }) githubButton!: ElementRef<HTMLButtonElement>;
   @ViewChild('whatsapp', { static: true }) whatsappButton!: ElementRef<HTMLButtonElement>;
 
-  phoneNumber = configData.myData.contact.phone; // Tu número de teléfono sin espacios ni caracteres especiales
 
   constructor() { }
 
@@ -31,31 +30,23 @@ export class FooterComponent implements AfterViewInit {
   }
 
   openConversationTelegram() {
-    let userNameTelegram = configData.myData.contact.telegram; // Opcional, si tienes un nombre de usuario 
-    let urlTelegram = configData.config.urlTelegram + userNameTelegram + `?start=${this.phoneNumber}`;
-    window.open(urlTelegram, "_blank")
+    window.open(Utils.urlTelegram, "_blank")
   }
 
   openConversationSkype() {
-    window.open(configData.myData.contact.skype, "_blank")
+    window.open(Utils.urlSkype, "_blank")
   }
 
   openConversationGithub() {
-
-    let urlGithub: string = configData.config.urlGithub + configData.myData.contact.github;
-    window.open(urlGithub, "_blank")
+    window.open(Utils.urlGithub, "_blank")
   }
 
   openConversationWhtsapp() {
-    let urlWhtsapp: string = configData.config.urlWhatsapp + this.phoneNumber + configData.config.textoWhatsappMsg;
-    window.open(urlWhtsapp, "_blank")
+    window.open(Utils.urlWhtsapp, "_blank")
   }
 
   openConversationLinkedin() {
-    let userNameLinkedin = configData.myData.contact.linkedin;
-
-    let urlLinkedin: string = configData.config.urlLinkedin + userNameLinkedin;
-    window.open(urlLinkedin, "_blank")
+    window.open(Utils.urlLinkedin, "_blank")
   }
 
 }

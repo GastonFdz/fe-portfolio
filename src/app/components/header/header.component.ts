@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import * as configData from '../../../assets/configData.json';
+import { Utils } from '../../shared/utils/utils.ts';
 
 @Component({
   selector: 'app-header',
@@ -10,5 +10,5 @@ import * as configData from '../../../assets/configData.json';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  title = configData.myData.personal.name + " " + configData.myData.personal.surname;
+  title = Utils.fullName;
 }

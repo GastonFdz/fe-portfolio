@@ -1,5 +1,6 @@
-{
-    "myData": {
+import  ConfigData from './config-data.ts'
+
+export const datos: ConfigData = {
         "personal": {
             "name": "Gaston",
             "surname": "Fernandez",
@@ -15,8 +16,7 @@
             "github": "GastonFdz",
             "linkedin": "gastonfdz",
             "email": "gaston.fernandez@yahoo.com"
-        }
-    },
+        },
     "config": {
         "urlGithub": "https://github.com/",
         "urlLinkedin": "https://www.linkedin.com/messaging/thread/new/?recipient=",
