@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Utils } from '../../shared/utils/utils.ts';
+import { Utils } from '../../shared/utils/utils';
 
 @Component({
   selector: 'app-header',

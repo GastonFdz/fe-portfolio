@@ -1,5 +1,5 @@
 import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
-import { Utils } from '../../shared/utils/utils.ts';
+import { Utils } from '../../shared/utils/utils';
 
 
 @Component({

@@ -1,4 +1,4 @@
-import  ConfigData from './config-data.ts'
+import  ConfigData from './config-data';
 
 export const datos: ConfigData = {
         "personal": {

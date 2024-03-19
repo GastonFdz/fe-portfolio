@@ -5,7 +5,6 @@
 /tmp
 /out-tsc
 /bazel-out
-target/
 
 # Node
 /node_modules
@@ -21,39 +20,13 @@ yarn-error.log
 .settings/
 *.sublime-workspace
 
-# System files
-.DS_Store
-Thumbs.db
-
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-**/src/main/**/build/
-**/src/test/**/build/
-
 # Visual Studio Code
-.vscode
-.history
 .vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
 
 # Miscellaneous
 /.angular/cache
@@ -70,3 +43,7 @@ HELP.md
 *.old
 *.tmp
 *.new
+
+# System files
+.DS_Store
+Thumbs.db
