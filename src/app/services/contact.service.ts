@@ -1,25 +1,50 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, inject } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { Injectable } from '@angular/core';
+import { Utils } from '../shared/utils/utils';
+import { apiConfig } from '../interfaces/config-data';
+import { Contact } from '../interfaces/contact';
+import TelegramBot from 'node-telegram-bot-api';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContactService {
+  apiUrl = apiConfig.urlContactService ? apiConfig.urlContactService : '';
+  constructor(
+    private http: HttpClient,
+    private bot: TelegramBot
+    ) {
+      this.bot = new TelegramBot(Utils.botTokenTelegram, { polling: true });
+      this.bot.getChat('@TU_BOT_USERNAME').then((chat) => {
+        Utils.chatIdTelegram = chat.id.toString();
+      });
+     }
+     
+  async contactService(body: Contact): Promise<unknown> {
+    if (this.apiUrl && body.verfyFields()) {
+      return await this.http.post(this.apiUrl, body).subscribe(
+        (resp) => {
+          console.log(resp);
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
+    } else {
+      console.error('url not found or body failed');
+      return null;
+    }
+  }
+  
+  async contact(contactData: Contact) {
+    console.log('contact().contactData=', contactData);
+    //await this.contactService(contactData);
+    
+    const subject = contactData.subject ? contactData.subject : Utils.subject;
 
-  private readonly _httpClient= inject(HttpClient);
+    const body = `Motivo: ${subject}\nNombre: ${contactData.name} ${contactData.lastname}\nEmail de contacto: ${contactData.email}\nTeléfono: ${contactData.phone}\nMensaje: ${contactData.message}`;   
 
-  constructor() { }
-
-  async contact(contactForm: FormGroup) {
-    const formData = contactForm.value;
-    const subject = formData.subject ? formData.subject : 'Nuevo contacto desde el formulario del portfolio';
-    const recipient = 'gaston.fernandez@yahoo.com';
-
-    const body = `Nombre: ${formData.name} ${formData.lastName}\nEmail de contacto: ${formData.email}\nTeléfono: ${formData.phone}\nMensaje: ${formData.message}`;
-
-    const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-    window.open(mailtoLink, '_blank');
+    this.bot.sendMessage(Utils.chatIdTelegram, body);
   }
 }

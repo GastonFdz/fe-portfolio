@@ -22,6 +22,9 @@ export const datos: ConfigData = {
         "urlLinkedin": "https://www.linkedin.com/messaging/thread/new/?recipient=",
         "urlWhatsapp": "https://wa.me/",
         "textoWhatsappMsg": "?text=Hola!%20Tengo%20una%20propuesta%20que%20puede%20ser%20de%20tu%20interés.",
-        "urlTelegram": "https://telegram.me/"
+        "urlTelegram": "https://telegram.me/",
+        "subject": "Nuevo contacto desde el formulario del portfolio",
+        "botTokenTelegram":"6898065261:AAFjmnjQFVMCMKzGfipcQYi-q2cutVz6RYs",
+        "chatIdTelegram":""
     }
 }

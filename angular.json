@@ -20,6 +20,7 @@
             "outputPath": "dist/fe-portfolio",
             "index": "src/index.html",
             "browser": "src/main.ts",
+            "sourceMap": true,
             "polyfills": [
               "zone.js"
             ],
@@ -32,31 +33,140 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [ ]
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "./src/app/shared/environments/environment.ts",
+                  "with": "./src/app/shared/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "8mb",
+                  "maximumError": "15mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
                 }
               ],
+              "serviceWorker": false,
               "outputHashing": "all"
             },
+            "fbd": {
+              "fileReplacements": [
+                {
+                  "replace": "./src/app/shared/environments/environment.ts",
+                  "with": "./src/app/shared/environments/environment.fbd.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "8mb",
+                  "maximumError": "15mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "serviceWorker": false
+            },
+            "qat": {
+              "fileReplacements": [
+                {
+                  "replace": "./src/app/shared/environments/environment.ts",
+                  "with": "./src/app/shared/environments/environment.qat.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "8mb",
+                  "maximumError": "15mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "serviceWorker": false
+            },
             "development": {
+              "optimization": true,
+              "extractLicenses": true,
+              "sourceMap": true,
+              "namedChunks": true,
+              "aot": true,
+              "outputHashing": "all",
+              "serviceWorker": false,
+              "fileReplacements": [
+                {
+                  "replace": "./src/app/shared/environments/environment.ts",
+                  "with": "./src/app/shared/environments/environment.dev.ts"
+                }
+              ],
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "8mb",
+                  "maximumError": "15mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            },
+            "local": {
               "optimization": false,
-              "extractLicenses": false,
-              "sourceMap": true
+              "outputHashing": "all",
+              "sourceMap": true,
+              "namedChunks": false,
+              "aot": false,
+              "extractLicenses": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "8mb",
+                  "maximumError": "15mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "serviceWorker": false
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "development"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -92,7 +202,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [ ]
           }
         },
         "lint": {
