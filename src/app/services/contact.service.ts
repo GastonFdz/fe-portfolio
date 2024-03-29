@@ -1,10 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Utils } from '../shared/utils/utils';
 import { apiConfig } from '../interfaces/config-data';
 import { Contact } from '../interfaces/contact';
-import TelegramBot from 'node-telegram-bot-api';
-
+import { Utils } from '../shared/utils/utils';
 
 @Injectable({
   providedIn: 'root'
@@ -13,14 +11,26 @@ export class ContactService {
   apiUrl = apiConfig.urlContactService ? apiConfig.urlContactService : '';
   constructor(
     private http: HttpClient,
-    private bot: TelegramBot
-    ) {
-      this.bot = new TelegramBot(Utils.botTokenTelegram, { polling: true });
-      this.bot.getChat('@TU_BOT_USERNAME').then((chat) => {
-        Utils.chatIdTelegram = chat.id.toString();
-      });
-     }
-     
+  ) {
+  }
+
+
+  async sendMessage(text:string) {
+    const url = `https://api.telegram.org/bot${Utils.botTokenTelegram}/sendMessage`;
+    const body = {
+      chat_id: Utils.chatIdTelegram,
+      text: text
+    };
+    this.http.post(url, body).subscribe(
+      response => {
+        console.log('Mensaje enviado correctamente', response);
+      },
+      error => {
+        console.error('Error al enviar el mensaje', error);
+      }
+    );
+  }
+
   async contactService(body: Contact): Promise<unknown> {
     if (this.apiUrl && body.verfyFields()) {
       return await this.http.post(this.apiUrl, body).subscribe(
@@ -28,7 +38,7 @@ export class ContactService {
           console.log(resp);
         },
         (error) => {
-          console.error(error);
+          console.error('Error al enviar el formulario a Telegram: ',error);
         }
       );
     } else {
@@ -36,15 +46,14 @@ export class ContactService {
       return null;
     }
   }
-  
+
   async contact(contactData: Contact) {
     console.log('contact().contactData=', contactData);
     //await this.contactService(contactData);
-    
+
     const subject = contactData.subject ? contactData.subject : Utils.subject;
 
-    const body = `Motivo: ${subject}\nNombre: ${contactData.name} ${contactData.lastname}\nEmail de contacto: ${contactData.email}\nTeléfono: ${contactData.phone}\nMensaje: ${contactData.message}`;   
-
-    this.bot.sendMessage(Utils.chatIdTelegram, body);
+    const body = `Motivo: ${subject}\nNombre: ${contactData.name} ${contactData.lastname}\nEmail de contacto: ${contactData.email}\nTeléfono: ${contactData.phone}\nMensaje: ${contactData.message}`;
+    await this.sendMessage(body);
   }
 }
