@@ -1,0 +1,154 @@
+body {
+  background: #000;
+  font-family: sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  max-width: 100%;
+  background: transparent;
+  border: 0;
+  margin: 0;
+  outline: 0;
+  padding: 0 0 15px 0;
+  color: #fff;
+}
+
+.section {
+  border-bottom: 1px solid white;
+}
+
+svg {
+  background-color: black;
+}
+
+svg text {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  fill: white;
+}
+
+.container {
+  box-shadow: 0 0 10px #fff;
+}
+
+.image-profile {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  top: 0;
+  left: 0;
+  margin-left: 40%;
+}
+
+.image-profile img {
+  max-width: 100%; 
+  max-height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;  
+}
+
+#image-section {
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+}
+
+.content {
+  color: #fff;
+  padding: 1.5%;
+  margin-left: 1.5%;
+}
+
+.qualifications, .education, .experience, .references {
+  position: relative;
+  width: 85% !important;
+  max-width: 100%; 
+  text-align: justify;
+  margin-left: 12.75%;
+}
+
+.lastname {
+  font-weight: 900;
+  letter-spacing: -10px;
+  line-height: 80px;
+  font-size: 80px;
+}
+
+.name {
+  font-weight: bold;
+  line-height: 48px;
+  font-size: 48px;
+}
+
+.detail {
+  text-align: justify;
+  font-style: italic;
+  font-size: small;
+  margin-left: 15%;
+}
+
+.about-me {
+  //max-width: 100px;
+  text-align: justify;
+  font-style: italic;
+  font-size: medium;
+  margin-left: 15%;
+}
+
+.date {
+  margin-left: 2.5%;
+}
+.contact-data {  
+  list-style: none;
+  font-size: medium;
+}
+//desktop
+@media (min-width: 769px) {
+  .sidebar {
+    width: 20%;
+    height: 100% !important;
+    background: #000;
+    color: #fff;
+    border: #fff 1px solid;
+    display: flow-root;
+    float: left;
+  }
+
+  .container {
+    box-shadow: 0 0 10px #fff;
+  }
+
+  .content {
+    margin-left: 160px;
+    line-height: 1.6;
+  }
+}
+
+//mobile
+@media (max-width: 768px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+  }
+
+  .content {
+    margin-left: 0;
+    padding: 0;
+  }
+
+  .container {
+    box-shadow: 0 0 0px #fff;
+  }
+
+  div.content {
+    margin-left: 0px !important;
+    width: 100%;
+  }
+}

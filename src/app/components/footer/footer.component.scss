@@ -1,0 +1,145 @@
+.footer-links {
+    width: 100px;
+    white-space: nowrap;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li a {
+    color: white;
+    text-decoration: none;
+    border: #fff 1px solid;
+    border-radius: 0%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.footer-links ul li a:hover {
+    color: darckgrey;
+    background-color: blue;
+    box-shadow: 2px 2px #18d6cd;
+    text-shadow: 1px 1px 0 #18d6cd;
+}
+
+.footer-links ul li a:active {
+    box-shadow: none;
+    transform: translateY(5px);
+}
+
+//desktop
+@media (min-width: 769px) {
+    .main {
+        width: fit-content;
+        height: auto;
+        display: flex;
+        flex-direction: inherit;
+        position: relative;
+        top: -40px;
+        left: 75%;
+        right: 23%;
+        bottom: 100%;
+        gap: 0.5em;
+        margin: 0.5em 0.5em 0.5em 0.5em;
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
+
+@media (max-width: 768px) {
+    .main {
+        width: fit-content;
+        height: auto;
+        display: flex;
+        flex-direction: inherit;
+        position: relative;
+        top: -40px;
+        left: 115%;
+        right: 23%;
+        bottom: 100%;
+        gap: 0.5em;
+        margin: 0.5em 0.5em 0.5em 0.5em;
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
+
+.whatsapp {
+    width: 45px;
+    height: 45px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    fill: #00ff00;
+    cursor: pointer;
+}
+
+.linkedin {
+    width: 45px;
+    height: 45px;
+    background-color: rgba(0, 0, 0, 0);
+    fill: #0077b5;
+    border: none;
+    cursor: pointer;
+}
+
+.github {
+    width: 45px;
+    height: 45px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    fill: #fff;
+    cursor: pointer;
+}
+
+.telegram {
+    width: 45px;
+    height: 45px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    fill: #24a1de;
+    stroke: white;
+    cursor: pointer;
+}
+
+.skype {
+    width: 45px;
+    height: 45px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+}
+
+.whatsapp:hover {
+    cursor: pointer;
+    transform: scale(1.5);
+}
+
+.linkedin:hover {
+    cursor: pointer;
+    transform: scale(1.45);
+}
+
+.github:hover {
+    cursor: pointer;
+    transform: scale(1.5);
+}
+
+.telegram:hover {
+    cursor: pointer;
+    transform: scale(1.5);
+}
+
+.skype:hover {
+    cursor: pointer;
+    transform: scale(1.5);
+}
+
+.rights {
+    width: fit-content;
+    display: inline-flex;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    bottom: 95%;
+    margin: 0 auto;
+    text-align: center;
+}
