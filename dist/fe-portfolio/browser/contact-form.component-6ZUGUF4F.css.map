@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/contact-form/contact-form.component.scss"],
+  "sourcesContent": [".header {\r\n    color: #36A0FF;\r\n    font-size: 27px;\r\n    padding: 10px;\r\n}\r\n\r\n.bigicon {\r\n    font-size: 35px;\r\n    color: #36A0FF;\r\n}\r\n\r\n.v-center input, .v-center textarea{\r\n    max-width: 100%;\r\n    min-width: 100vh;\r\n    width: 100%;\r\n    position: relative;\r\n    left: 25%;\r\n  }"],
+  "mappings": "AAAA,CAAA,OACI,MAAA,QACA,UAAA,KAFJ,QAGI,KAGJ,CAAA,QACI,UAAA,KACA,MAAA,QAGJ,CAAA,SAAA,MAAA,CAAA,SAAA,SACI,UAAA,KACA,UAAA,MACA,MAAA,KACA,SAAA,SACA,KAAA",
+  "names": []
+}
