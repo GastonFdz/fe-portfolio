@@ -17,8 +17,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "deployUrl": "/",
-            "outputPath": "dist/",
+            "deployUrl": "/fe-portfolio/",
+            "outputPath": "dist/fe-portfolio",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "sourceMap": true,
