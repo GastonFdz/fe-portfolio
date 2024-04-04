@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/styles.scss"],
-  "sourcesContent": ["html,\r\nbody {\r\n  height: 100%;\r\n  background-color: black !important;\r\n  font-family: Arial, sans-serif;\r\n  font-size: 16px;\r\n  line-height: 1.6;\r\n}\r\n\r\nbody {\r\n  display: flex;\r\n  flex-direction: column;\r\n  min-height: 100vh;\r\n  margin: 0;\r\n}\r\n\r\nmain {\r\n  height: 100%;\r\n  width: 100%;\r\n  flex: 1;\r\n}\r\n\r\nfooter {\r\n  margin-top: auto;\r\n  width: 100%;\r\n}"],
-  "mappings": "AAAA,KAAA,KAEE,OAAA,KACA,iBAAA,eACA,YAAA,KAAA,CAAA,WACA,UAAA,KACA,YAAA,IAGF,KACE,QAAA,KACA,eAAA,OACA,WAAA,MAZF,OAaE,EAGF,KACE,OAAA,KACA,MAAA,KACA,KAAA,EAGF,OACE,WAAA,KACA,MAAA",
-  "names": []
-}
