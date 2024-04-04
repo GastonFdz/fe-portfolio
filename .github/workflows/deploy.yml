@@ -28,5 +28,5 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: actions/jekyll-build-pages@v1
       with:
-        source: ./dist/ # Ruta fuente desde la raíz del repositorio
+        source: ./dist # Ruta fuente desde la raíz del repositorio
         destination: ./_site # Carpeta destino para los archivos generados
