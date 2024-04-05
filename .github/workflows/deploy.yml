@@ -28,5 +28,7 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: actions/jekyll-build-pages@v1
       with:
-        source: ./dist/fe-portfolio # Ruta fuente desde la raíz del repositorio
+        source: ./dist/fe-portfolio/browser # Ruta fuente desde la raíz del repositorio
         destination: ./_site # Carpeta destino para los archivos generados
+    - name: Copiar archivo 404.html
+      run: cp ./dist/fe-portfolio/browser/index.html ./dist/fe-portfolio/browser/404.html

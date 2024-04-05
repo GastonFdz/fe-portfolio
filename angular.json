@@ -17,8 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "deployUrl": "/fe-portfolio/",
-            "outputPath": "dist/fe-portfolio",
+            "deployUrl": "dist/fe-portfolio/",
+            "outputPath": "dist/fe-portfolio/",
+            "baseHref": "/fe-portfolio/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "sourceMap": true,
@@ -38,6 +39,9 @@
           },
           "configurations": {
             "production": {
+              "deployUrl": "dist/fe-portfolio/browser/",
+              "outputPath": "dist/fe-portfolio/",
+              "baseHref": "/fe-portfolio/",
               "fileReplacements": [
                 {
                   "replace": "./src/app/shared/environments/environment.ts",

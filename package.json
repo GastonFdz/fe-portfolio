@@ -5,9 +5,9 @@
     "ng": "ng",
     "debugger": "ng serve",
     "start": "npm install && ng serve",
-    "deploy": "npm install && ng cache clean && ng build --configuration=production",
-    "build": "ng build --configuration=development",
-    "watch": "ng build --watch --configuration development",
+    "deploy": "npm install && ng cache clean && ng build --configuration deploy --configuration production --base-href=/fe-portfolio/",
+    "build": "ng build --base-href=/fe-portfolio/ --configuration=development",
+    "watch": "ng build --base-href=/fe-portfolio/ --watch --configuration=development",
     "test": "ng test",
     "lint": "ng lint"
   },
