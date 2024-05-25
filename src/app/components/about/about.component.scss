@@ -1,6 +1,14 @@
-body {
-  background: #000;
-  font-family: sans-serif;
+@import 'scss/resume.scss';
+
+.content {
+  padding: 1rem;
+  height: 100%;
+  overflow-y: auto;
+  color: #fff;
+
+  @media (max-width: 991.98px) {
+    height: auto;
+  }
 }
 
 h1,
@@ -9,146 +17,91 @@ h3,
 h4,
 h5,
 h6 {
-  max-width: 100%;
-  background: transparent;
-  border: 0;
-  margin: 0;
-  outline: 0;
-  padding: 0 0 15px 0;
+  font-family: 'Saira Extra Condensed', serif;
+  font-weight: 700;
+  text-transform: uppercase;
   color: #fff;
 }
 
-.section {
-  border-bottom: 1px solid white;
+h1 {
+  font-size: 6rem;
+  line-height: 5.5rem;
 }
 
-svg {
-  background-color: black;
+h2 {
+  font-size: 3.5rem;
 }
 
-svg text {
-  font-family: Arial, sans-serif;
-  font-size: 20px;
-  fill: white;
-}
-
-.container {
-  box-shadow: 0 0 10px #fff;
-}
-
-.image-profile {
-  width: 100px;
-  height: 100px;
-  position: relative;
-  top: 0;
-  left: 0;
-  margin-left: 40%;
-}
-
-.image-profile img {
-  max-width: 100%; 
-  max-height: 100%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;  
-}
-
-#image-section {
-  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-}
-
-.content {
+.resume {
+  margin-left: 11%;
+  margin-right: 5.5%;
   color: #fff;
-  padding: 1.5%;
-  margin-left: 1.5%;
 }
 
-.qualifications, .education, .experience, .references {
-  position: relative;
-  width: 85% !important;
-  max-width: 100%; 
-  text-align: justify;
-  margin-left: 12.75%;
+.subheading {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: 'Saira Extra Condensed', serif;
+  font-size: 1.35rem;
 }
 
-.lastname {
-  font-weight: 900;
-  letter-spacing: -10px;
-  line-height: 80px;
-  font-size: 80px;
+.list-social-icons a {
+  color: #495057;
 }
 
-.name {
-  font-weight: bold;
-  line-height: 48px;
-  font-size: 48px;
+.list-social-icons a:hover {
+  color: #fff;
 }
 
-.detail {
-  text-align: justify;
-  font-style: italic;
-  font-size: small;
-  margin-left: 15%;
+.list-social-icons a .fa-lg {
+  font-size: 1.75rem;
 }
 
-.about-me {
-  //max-width: 100px;
-  text-align: justify;
-  font-style: italic;
-  font-size: medium;
-  margin-left: 15%;
+.list-icons {
+  font-size: 3rem;
 }
 
-.date {
-  margin-left: 2.5%;
+.list-icons .list-inline-item i:hover {
+  color: #BD5D38;
 }
-.contact-data {  
-  list-style: none;
-  font-size: medium;
+
+section.resume-section {
+  border-bottom: 1px solid #dee2e6;
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
 }
-//desktop
-@media (min-width: 769px) {
-  .sidebar {
-    width: 20%;
-    height: 100% !important;
-    background: #000;
-    color: #fff;
-    border: #fff 1px solid;
-    display: flow-root;
-    float: left;
-  }
 
-  .container {
-    box-shadow: 0 0 10px #fff;
-  }
+section.resume-section .resume-item .resume-date {
+  min-width: none;
+}
 
-  .content {
-    margin-left: 160px;
-    line-height: 1.6;
+@media (min-width: 768px) {
+  section.resume-section .resume-item .resume-date {
+    min-width: 18rem;
   }
 }
 
-//mobile
-@media (max-width: 768px) {
-  .sidebar {
-    position: static;
-    width: 100%;
+@media (min-width: 992px) {
+  section.resume-section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
   }
+}
 
-  .content {
-    margin-left: 0;
-    padding: 0;
-  }
+.bg-primary {
+  background-color: #BD5D38 !important;
+}
 
-  .container {
-    box-shadow: 0 0 0px #fff;
-  }
+.text-primary {
+  color: #BD5D38 !important;
+}
 
-  div.content {
-    margin-left: 0px !important;
-    width: 100%;
-  }
+a {
+  color: #BD5D38;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: #824027;
 }

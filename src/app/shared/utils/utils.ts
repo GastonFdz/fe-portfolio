@@ -1,5 +1,5 @@
-import configData from "../../interfaces/config-data";
-import { datos } from "../../interfaces/data";
+import configData from "../interfaces/config-data";
+import { datos } from "../interfaces/data";
 
 
 export class Utils {
@@ -75,5 +75,15 @@ export class Utils {
     static set chatIdTelegram(idChat:string){
         const data = this.loadConfigData();
         data.config.chatIdTelegram = idChat;
+    }
+
+    static get baseUrl(): string{
+        const data = this.loadConfigData();
+        return data.config.baseUrl;
+    }
+
+    static set baseUrl(baseUrl:string){
+        const data = this.loadConfigData();
+        data.config.baseUrl = baseUrl;
     }
 }

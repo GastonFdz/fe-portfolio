@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { apiConfig } from '../interfaces/config-data';
-import { Contact } from '../interfaces/contact';
+import { apiConfig } from '../shared/interfaces/config-data';
+import { Contact } from '../shared/interfaces/contact';
 import { Utils } from '../shared/utils/utils';
 
 @Injectable({

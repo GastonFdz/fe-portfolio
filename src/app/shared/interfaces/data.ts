@@ -25,6 +25,7 @@ export const datos: ConfigData = {
         "urlTelegram": "https://telegram.me/",
         "subject": "Nuevo contacto desde el formulario del portfolio",
         "botTokenTelegram":"6898065261:AAFjmnjQFVMCMKzGfipcQYi-q2cutVz6RYs",
-        "chatIdTelegram":"1454245579"
+        "chatIdTelegram":"1454245579",
+        "baseUrl":"/fe-portfolio"
     }
 }

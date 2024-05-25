@@ -7,6 +7,7 @@ interface UrlData {
     subject:string;
     botTokenTelegram:string;
     chatIdTelegram:string;
+    baseUrl:string;
 }
 
 export default UrlData;

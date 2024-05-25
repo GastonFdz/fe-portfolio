@@ -10,3 +10,17 @@ nav.navbar {
 .nav-link:hover{
     text-shadow: 1px 1px 0 white; 
 }
+
+.logo-text {
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+
+.logo-text {
+    display: inline-block;
+  }
+  
+  .logo-text.hidden {
+    display: none;
+  }
